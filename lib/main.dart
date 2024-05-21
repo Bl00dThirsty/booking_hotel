@@ -28,12 +28,8 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
         children: [
-          Container(
-            height: 300,
-            color: Colors.blue,),
-            Container(
-              height: 1500,
-              color: Colors.red,),
+          SearchSection(),
+          HotelSection(),
         ],) ,)
     );
   }
@@ -81,6 +77,98 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       centerTitle: true,
       backgroundColor: Colors.white,
+    );
+  }
+}
+
+class SearchSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey[200],
+      padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
+
+
+      child: Column(
+        children: [
+          
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(left: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ]
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Yaoundé',
+                      contentPadding: EdgeInsets.all(10),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                  ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                      ),
+                    
+                  ],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(25),
+                  ),
+                ),
+                child: ElevatedButton(
+                  onPressed: (){},
+                  child: Icon(
+                    Icons.search,
+                    size: 26,
+                  ),
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(), 
+                  //primary: d_green,
+                  padding: EdgeInsets.all(10),
+                ),
+                  ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 50,
+          ),
+            Container(
+            height: 50, 
+            color: Colors.red,),
+        ],
+      ),
+    );
+  }
+}
+
+class HotelSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 2000,
+      color: Colors.white,
     );
   }
 }
