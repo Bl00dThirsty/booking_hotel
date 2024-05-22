@@ -102,7 +102,7 @@ class SearchSection extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
+                        color: Colors.grey.shade300,
                         blurRadius: 5,
                         offset: Offset(0, 3),
                       ),
@@ -126,14 +126,11 @@ class SearchSection extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
+                        color: Colors.grey.shade300
                       ),
                     
                   ],
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(25),
+                  borderRadius: BorderRadius.all(Radius.circular(25),
                   ),
                 ),
                 child: ElevatedButton(
@@ -144,19 +141,79 @@ class SearchSection extends StatelessWidget {
                   ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(), 
-                  //primary: d_green,
                   padding: EdgeInsets.all(10),
+                  backgroundColor: d_green,
+                  foregroundColor: Colors.white,
                 ),
                   ),
               )
             ],
           ),
-          SizedBox(
-            height: 50,
-          ),
-            Container(
-            height: 50, 
-            color: Colors.red,),
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Choisir la date',
+                    style: GoogleFonts.nunito(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                    ),
+// SizedBox pour séparer les deux champs texte
+
+
+
+                  SizedBox(
+                    height: 15,
+                  ),
+
+
+
+
+                    Text('12 Dec - 22 Dec',
+                    style: GoogleFonts.nunito(
+                      color: Colors.black,
+                      fontSize: 17,
+                    ),)
+                  ],
+                  ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Nombre de chambres',
+                    style: GoogleFonts.nunito(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),),
+// SizedBox pour séparer les deux champs texte
+
+
+
+                  SizedBox(
+                    height: 15,
+                  ),
+
+
+                    Text('1 Chambre - Adulte',
+                    style: GoogleFonts.nunito(
+                      color: Colors.black,
+                      fontSize: 17,
+                      //fontWeight: FontWeight.lerp(FontWeight.w300, FontWeight.w400, 0.9),
+                    ),
+                    )
+                  ],
+                  ),
+              ),
+            ]
+            )
         ],
       ),
     );
