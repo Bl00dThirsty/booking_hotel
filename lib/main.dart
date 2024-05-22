@@ -224,19 +224,19 @@ class HotelSection extends StatelessWidget {
   final List hotelList = [
     {
       'title': 'Grand Royl Hotel',
-      'place': 'Boulevard du 20 Mai, Yaoundé',
+      'place': 'Blv. 20 Mai, Yaoundé',
       'distance': 2,
       'review': 37,
       'picture': 'images/hotel_1.png',
-      'price': '80',
+      'price': '80, 000',
     },
     {
       'title': 'United Hotel',
-      'place': 'Bastos, Yaoundé',
+      'place': 'Warda, Yaoundé',
       'distance': 2,
       'review': 37,
       'picture': 'images/hotel_2.png',
-      'price': '80',
+      'price': '80, 000',
     },
     {
       'title': 'Palce 26',
@@ -244,15 +244,15 @@ class HotelSection extends StatelessWidget {
       'distance': 2,
       'review': 37,
       'picture': 'images/hotel_3.png',
-      'price': '80',
+      'price': '80, 000',
     },
     {
       'title': 'Palace 23',
-      'place': 'Boulevard du 20 Mai, Yaoundé',
+      'place': 'Blv. 20 Mai, Yaoundé',
       'distance': 2,
       'review': 87,
       'picture': 'images/hotel_4.png',
-      'price': '80',
+      'price': '150, 000',
     }
     
   ];
@@ -363,12 +363,118 @@ class HotelCard extends StatelessWidget {
             ),))],
 
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(hotelData['title'],
+                style: GoogleFonts.nunito(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                ),
+                ),
+                Text('XFA ' + hotelData['price'],
+                style: GoogleFonts.nunito(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(hotelData['place'],
+                style: GoogleFonts.nunito(
+                  fontSize: 14,
+                  color: Colors.grey[500],
+                  fontWeight: FontWeight.w400,
+                ),
+                ),
+
+              Row(
+                children: [
+                  Icon(
+                    Icons.place,
+                    color: d_green,
+                    size: 14.0,
+                  ),
+                  Text(hotelData['distance'].toString() + ' km de la ville',
+                  style: GoogleFonts.nunito(
+                  fontSize: 14,
+                  color: Colors.grey[500],
+                  fontWeight: FontWeight.w400,
+                ),
+                ),
+                ],
+              ),
+              Text('par nuit',
+            style: GoogleFonts.nunito(
+                  fontSize: 14,
+                  color: Colors.grey[800],
+                  fontWeight: FontWeight.w400,
+                ),),
+              
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                    Icons.star_rate,
+                    color: d_green,
+                    size: 14,
+                  ),
+                    Icon(
+                    Icons.star_rate,
+                    color: d_green,
+                    size: 14,
+                  ),
+                    Icon(
+                    Icons.star_rate,
+                    color: d_green,
+                    size: 14,
+                  ),
+                    Icon(
+                    Icons.star_rate,
+                    color: d_green,
+                    size: 14,
+                  ),
+                    Icon(
+                    Icons.star_border,
+                    color: d_green,
+                    size: 14,
+                  ),
+                  ],
+                ),
+
+
+              SizedBox(
+                width: 95,
+              ),
+
+
+
+                Text(hotelData['review'].toString() + ' reviews',
+                style: GoogleFonts.nunito(
+                  fontSize: 14,
+                  color: Colors.grey[800],
+                  fontWeight: FontWeight.w400,
+                ),
+                )
+              ],
+            ),
+          ),  
         ],
       ),
-
-
-
-    );
+);
   }
 }
